@@ -12,17 +12,20 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname+'/uploads'));
 
 
-const customerRoute=require("./routes/customerRoutes");
-app.use(customerRoute);
-const adminRoute=require("./routes/adminRoutes");
-app.use(adminRoute);
-const ProfessionalRoute=require("./routes/professionalRoutes");
-app.use(ProfessionalRoute);
+// const customerRoute=require("./routes/customerRoutes");
+// app.use(customerRoute);
+// const adminRoute=require("./routes/adminRoutes");
+// app.use(adminRoute);
+// const ProfessionalRoute=require("./routes/professionalRoutes");
+// app.use(ProfessionalRoute);
 const serviceRoute=require("./routes/serviceRoutes");
 app.use(serviceRoute);
 const categoryRoute=require("./routes/categoryRoutes");
 app.use(categoryRoute);
-
+const subcategoryRoute=require("./routes/subcategoryRoutes");
+app.use(subcategoryRoute);
+const bookingRoute=require("./routes/bookingRoutes");
+app.use(bookingRoute);
 app.listen("90");
 
 
