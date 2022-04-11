@@ -70,3 +70,5 @@ module.exports.verifyAdmin= function(req,res,next){
         res.send({msg:"invalid token"})
   }
   }
+
+  
