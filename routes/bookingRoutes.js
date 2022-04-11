@@ -16,6 +16,8 @@ router.post("/book/post",auth.verifyCustomer,function(req,res){
     const bookingData=new Booking({
         customerId:customerId,
         subcategoryId:subcategoryId,
+        booked_date:booked_date,
+        bookeed_slot:booked_slot
     });
 
     bookingData.
@@ -29,7 +31,7 @@ router.post("/book/post",auth.verifyCustomer,function(req,res){
 });
 
 // Router to get booked application
-router.get("/booking/view",auth.verifyCustomer,function(req,res){
+router.get("/booking/view",auth.verifyAdmin,function(req,res){
     Booking.find({customerId:req.customerInfo._id}).
     populate('customerId').
     populate('subcategoryId').
